@@ -7,7 +7,7 @@ import Contact from './Contact';
 import About from './About';
 import Subjects from './Subjects';
 import {BrowserRouter,Route,Routes } from "react-router-dom"
-import { First } from "./First";
+
 
 
 
@@ -20,8 +20,7 @@ function App() {
 
       <Header/>
 <Routes>
-      <Route path="/" element ={<First/>}/>
-      <Route path="/Home" element ={<Home/>}/>
+      <Route path="/" element ={<Home/>}/>
       <Route path="/About" element ={<About/>}/>
       <Route path="/Contact" element ={<Contact/>}/>
       <Route path="/Subjects" element ={<Subjects/>}/>

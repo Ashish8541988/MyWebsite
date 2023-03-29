@@ -9,6 +9,7 @@ import { getFirestore, addDoc, collection, serverTimestamp,} from "firebase/fire
 
 
 
+
 const db = getFirestore(app);
  const auth=getAuth(app);
   
@@ -31,8 +32,8 @@ export const Signup = () => {
   .then((userCredential) => {
     // Signed in 
     
-   const user = userCredential.user;
-   const prrovider=user.providerData[0].providerId
+  user = userCredential.user;
+  prrovider=user.providerData[0].providerId
    setprrovider(prrovider)
    setuser(user)
    console.log(user)

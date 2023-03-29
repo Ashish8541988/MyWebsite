@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState,useEffect } from 'react';
-import {Link,Navigate} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import { app } from './firebase'
 import { onAuthStateChanged, getAuth,signOut, }  from "firebase/auth";
 import { getFirestore, addDoc, collection, serverTimestamp,} from "firebase/firestore";
@@ -85,17 +85,17 @@ function header() {
        
         </div>
     </div>
- ):(<div><Navigate to="/"/></div>)}
+ ):(<div>login Please!</div>)}
      
         </div>
     {/* <a href="index.html"><img src="image/logo.png" alt='logo'/></a> */}
 <div className="nav-links" id="navLinks">
     <i className="fa-solid fa-xmark" style={{color:"white"}} onClick={hideMenu}></i>
     <ul>
-    <li><Link to="/Home">HOME</Link> </li>
+    <li><Link to="/">HOME</Link> </li>
     <li><Link to="/About">About</Link> </li>
     <li><Link to="/Contact">Contact</Link> </li>
-    <li><Link to="/Subjects">Subjects</Link> </li>
+    <li><Link to="/Subjects">Subjects</Link></li>
 </ul>
 
 </div>

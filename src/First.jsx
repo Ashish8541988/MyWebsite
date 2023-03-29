@@ -3,7 +3,6 @@ import { useState,useEffect } from 'react'
 import {Signup} from "./Signup"
 import {Login} from "./Login"
 import { app } from './firebase'
-import { Navigate } from 'react-router-dom'
 import { getAuth, GoogleAuthProvider,onAuthStateChanged,signInWithPopup,}  from "firebase/auth";
 
 
@@ -40,20 +39,20 @@ export const First = () => {
 
   return (
     <div className='loginpage'>
-    {user?(<div><Navigate to="/Home"/></div>):(<>
+    <>
   <div className='abc'>
     <>
       {page}
       </>
       <br></br>
-      <button onClick={signup} style={{backgroundColor:"transparent",color:"white",borderColor:"wheat",cursor:"pointer"}}>Create An Account</button>
+      <button className='create' onClick={signup} style={{backgroundColor:"transparent",color:"white",borderColor:"wheat",cursor:"pointer"}}>Create An Account</button>
       <div className='google'>
           <button className='googlebtn' onClick={loginHandler}>SIGN IN WITH GOOGLE</button>
       </div>
       
   </div>
   
-  </>)}
+  </>
     
   </div>
   )

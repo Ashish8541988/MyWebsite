@@ -1,11 +1,24 @@
 import React from 'react'
+import { useState ,useEffect} from 'react';
+import { onAuthStateChanged, getAuth,}  from "firebase/auth";
+import { app } from './firebase';
+import { First } from "./First";
 
-
+const auth=getAuth(app)
 function about() {
 
+  const [user ,setuser] =useState(false);
+  useEffect(() => {
+      const unsubscribe = onAuthStateChanged(auth, (data) => {
+        setuser(data);
+      },[]); 
+      return () => { 
+        unsubscribe();
+      }; 
+      });
   return (
     <div>
-      <section className="about-us">
+      {user?(<section className="about-us">
     <div className="row">
         <div className="about-col">
 <h1>We provide all content free of cost</h1>
@@ -17,7 +30,8 @@ function about() {
         </div>
     </div>
 
-</section>
+</section>):(<First/>)}
+      
 
      
 

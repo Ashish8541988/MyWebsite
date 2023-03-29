@@ -2,10 +2,15 @@
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
+    
 }
+/* .home{
+    background-color: rgb(8, 197, 245);
+} */
 .header1{
     height: 90px;
-    background-color: gold;
+    background-color: rgba(245, 214, 35, 0.993);
+    
 }
 .header{
     min-height: 100vh;
@@ -192,7 +197,18 @@ p{
 }
 
 .subjects-col{
-    flex-basis: 22%;
+    flex-basis: 2%;
+    background: #fff3f3;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    cursor: pointer;
+    
+}
+.subjects-col1{
+    flex-basis: 30%;
     background: #fff3f3;
     border-radius: 10px;
     margin-bottom: 5%;
@@ -253,6 +269,7 @@ font-size: medium;
     justify-content: space-between;
 }
 .campus-col{
+   
     flex-basis: 32%;
     overflow: hidden;
     border-radius: 10px;
@@ -265,6 +282,7 @@ font-size: medium;
     height: 300px;
 }
 .layer{
+    
     background: transparent; 
     height: 100%;
     width: 100%;
@@ -272,12 +290,28 @@ font-size: medium;
     top: 0;
     left: 0;
     transition: 1s;
+
     
 }
 .layer:hover{
+    
     background: rgba(226,0,0,0.7);
 }
 .layer h3{
+
+    width: 100%;
+    font-weight: 500;
+    color: #fff;
+    font-size: 26px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s;
+}
+.layer h4{
+
     width: 100%;
     font-weight: 500;
     color: #fff;
@@ -290,8 +324,14 @@ font-size: medium;
     transition: 0.5s;
 }
 .layer:hover h3{
+    
     opacity: 1;
     bottom: 49%;
+}
+.layer:hover h4{
+    
+    opacity: 1;
+    bottom: 39%;
 }
 @media(max-width: 700px){
     .campus-row{
@@ -421,7 +461,9 @@ font-size: medium;
     display: inline;
     flex-direction: column;
     justify-content: space-between;
-    height: 200px;
+    height: 1000px;
+    width: 1000;
+    size: 500px;
 }
 .fa-solid{
     color: rgb(223, 197, 68);
@@ -667,13 +709,22 @@ padding-left: 10px;
     flex-direction: column;
     gap: -0.5rem;
     padding-top: 5px;
+    border-radius: 50px;
 }
 .userdetail p{
    color: #f0f0f0;
 }
+.userdetail input{
+    border-radius: 50px;
+    align-items: center;
+    justify-content: center;
+    padding-left: 15px;
+}
 .loginpage{
     display: flex;
-    background-color: rgba(71, 172, 255, 0.932) ;
+    background-image: url(image/login.webp);
+    background-repeat: no-repeat;
+    background-size:cover;
     height: 80vh;
     width: 100%;
     justify-content: center;
@@ -691,9 +742,10 @@ padding-left: 10px;
     height: 150px;
     flex-direction: column;
     width: 200px;
-    border: solid rgba(247, 245, 245, 0.938);
+    background-color: rgba(20, 19, 19, 0.452);
+    border: none;
     border-radius: .5rem;
-    border-style: groove;
+    border-style: none;
     justify-content: center;
     align-items: center;
     column-gap: .5rem;
@@ -717,19 +769,22 @@ padding-left: 10px;
     display: flex;
     gap: 7.5rem;
     
+    
 }
 .restbtn{
     height: 35px;
     width: 100px;
-   background-color: #f44336;
+   background-color: white;
    border: none;
-   color: white;
+   color: rgb(17, 16, 16);
    cursor: pointer;
+   border-radius: 20px;
+   font-family:'Times New Roman', Times, serif;
    
 }
 .restbtn:hover{
-    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
-    border-style: ridge;
+    box-shadow: 0 0 20px 0px rgba(241, 4, 4, 0.945);
+   
 }
 .google{
     margin-top: 1rem;
@@ -740,14 +795,26 @@ padding-left: 10px;
 .googlebtn{
     width: 100%;
     height: 25px;
-    background-color: #f44336;
-    border: none;
-    color: white;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    color: rgb(17, 16, 16);
     cursor: pointer;
+    border: none;
+    text-align: initial;
+    padding-left: 20px;
+    font-weight: 200px;
+    font-style: bold;
+    font-family:'Times New Roman', Times, serif;
+    border-radius: 15px;
+    background-image: url(./image/google.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: 165px;
 }
 .googlebtn:hover{
-    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
-    border-style: ridge;
+    box-shadow: 0 0 20px 0px rgba(241, 4, 4, 0.945);
+   
 }
 .create{
     margin-top: 20px;
@@ -755,6 +822,10 @@ padding-left: 10px;
     border-style: ridge;
     cursor: pointer;
 
+}
+.create:hover{
+    box-shadow: 0 0 20px 0px rgba(241, 4, 4, 0.945);
+    border-style: groove;
 }
 .lili{
     color: white;
@@ -795,6 +866,7 @@ padding-left: 10px;
         height: 70vh;
 
     }
+    
     .abc{
         width: 70%;
         padding: 8px;
@@ -811,6 +883,14 @@ padding-left: 10px;
     .restbtn{
         height: 25px;
         width: 70px;
+    }
+    .restbtn:hover{
+        box-shadow: 0 0 20px 0px rgba(241, 4, 4, 0.945);
+       
+    }
+    .googlebtn{
+        width: 81%;
+        margin-left: 20px;
     }
     
         
