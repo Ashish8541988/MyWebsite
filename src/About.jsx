@@ -1,21 +1,9 @@
 import React from 'react'
-import { useState ,useEffect} from 'react';
-import { onAuthStateChanged, getAuth,}  from "firebase/auth";
-import { app } from './firebase';
 import { First } from "./First";
 
-const auth=getAuth(app)
-function about() {
+function about(user1) {
+  const user=user1.user
 
-  const [user ,setuser] =useState(false);
-  useEffect(() => {
-      const unsubscribe = onAuthStateChanged(auth, (data) => {
-        setuser(data);
-      },[]); 
-      return () => { 
-        unsubscribe();
-      }; 
-      });
   return (
     <div>
       {user?(<section className="about-us">

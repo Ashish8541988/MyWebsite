@@ -1,8 +1,7 @@
 import React from 'react'
-import { useState,useEffect } from 'react';
 import {Link} from 'react-router-dom'
 import { app } from './firebase'
-import { onAuthStateChanged, getAuth,signOut, }  from "firebase/auth";
+import { getAuth,signOut, }  from "firebase/auth";
 import { getFirestore, addDoc, collection, serverTimestamp,} from "firebase/firestore";
 
 
@@ -18,7 +17,7 @@ import { getFirestore, addDoc, collection, serverTimestamp,} from "firebase/fire
 
 
 
-
+//nevbar for mobile view
   
   function showMenu(){
      var navLinks = document.getElementById("navLinks");
@@ -39,17 +38,10 @@ const logoutHandler=()=>{
     
     signOut(auth);
   }
-function header() {
-    const [user ,setuser] =useState(false);
-    useEffect(() => {
-      const unsubscribe=onAuthStateChanged(auth,(data)=>{
-        setuser(data)
-        return ()=>{
-            unsubscribe()
-        }
-      })
- 
-    })
+function header(user1) {
+  const user=user1.user
+  console.log("headar",user)
+   
     const submitHandler = async (e) => {
         e.preventDefault();
     
@@ -92,10 +84,10 @@ function header() {
 <div className="nav-links" id="navLinks">
     <i className="fa-solid fa-xmark" style={{color:"white"}} onClick={hideMenu}></i>
     <ul>
-    <li><Link to="/">HOME</Link> </li>
-    <li><Link to="/About">About</Link> </li>
-    <li><Link to="/Contact">Contact</Link> </li>
-    <li><Link to="/Subjects">Subjects</Link></li>
+    <li><Link to="/" id='navv'>HOME</Link> </li>
+    <li><Link to="/About" id='navv'>About</Link> </li>
+    <li><Link to="/Contact" id='navv'>Contact</Link> </li>
+    <li><Link to="/Subjects" id='navv'>Subjects</Link></li>
 </ul>
 
 </div>

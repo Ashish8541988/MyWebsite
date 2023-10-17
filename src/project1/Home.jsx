@@ -1,7 +1,6 @@
 import React from "react";
 import { useState,useEffect,useRef } from 'react';
 import { app } from '../firebase';
-import { onAuthStateChanged, getAuth,}  from "firebase/auth";
 import { getFirestore, addDoc, collection, serverTimestamp, onSnapshot, query, orderBy,} from "firebase/firestore";
 import Comment from "./Comment";
 import {Member} from "./Member";
@@ -9,16 +8,13 @@ import {MMM} from "./Member";
 import { First } from "../First";
 
 
-
-
-
-const auth=getAuth(app);
 const db = getFirestore(app);
 
 //rating function
 
 
-function Home() {
+function Home(user1) {
+    const user=user1.user
     const custumElement1=useRef(null)
     const custumElement2=useRef(null)
     const custumElement3=useRef(null)
@@ -76,7 +72,6 @@ const star5=()=>{
 
 const [comments,setcomments]=useState([])
 const [comment,setcomment]=useState("");
-const [user ,setuser] =useState(false);
 const submitHandlerr = async (e) => {
     e.preventDefault();
 setcomment("");
@@ -100,10 +95,6 @@ setrating("")
   useEffect(() => {
     const q = query(collection(db, "Comments"), orderBy("createdAt", "asc"));
 
-    const unsubscribe = onAuthStateChanged(auth, (data) => {
-      setuser(data);
-    },[]);
-
     const unsubscribeForComment = onSnapshot(q, (snap) => {
       setcomments(
         snap.docs.map((item) => {
@@ -114,7 +105,6 @@ setrating("")
     });
 
     return () => {
-      unsubscribe();
       unsubscribeForComment();
     };
   }, []);

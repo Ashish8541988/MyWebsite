@@ -46,8 +46,8 @@ export const Signup = () => {
       }).then(() => {
         addDoc(collection(db, "User"), {
            
-            Name:Name,
-            uri: user.photoURL,
+            Name:user.displayName,
+            uri: "https://static.vecteezy.com/system/resources/thumbnails/013/042/571/small/default-avatar-profile-icon-social-media-user-photo-in-flat-style-vector.jpg",
             email:user.email,
             createdAt: serverTimestamp(),
           });
@@ -63,7 +63,7 @@ export const Signup = () => {
     // ...
   )
   .catch((error) => {
-    alert("please fill correct email id")
+    alert(error)
 
     // ..
   });

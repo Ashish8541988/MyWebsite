@@ -1,9 +1,9 @@
 import React from 'react'
-import { useState,useEffect } from 'react'
+import { useState } from 'react'
 import {Signup} from "./Signup"
 import {Login} from "./Login"
 import { app } from './firebase'
-import { getAuth, GoogleAuthProvider,onAuthStateChanged,signInWithPopup,}  from "firebase/auth";
+import { getAuth, GoogleAuthProvider,signInWithPopup,}  from "firebase/auth";
 
 
 
@@ -21,21 +21,6 @@ export const First = () => {
     const signup=()=>{
       setpage(<Signup/>)
     }
-
-
-    const[user,setuser]= useState("");
-    useEffect(()=>{
-      const unsubscribe=onAuthStateChanged(auth,(data)=>{
-        setuser(data)
-        
-        return ()=>{
-            unsubscribe()
-        }
-      },[])
-    }
-    )
-
-
 
   return (
     <div className='loginpage'>

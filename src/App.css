@@ -1,21 +1,25 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Philosopher', sans-serif;
+    
     
 }
+*::-webkit-scrollbar {
+    display: none;
+  }
 /* .home{
     background-color: rgb(8, 197, 245);
 } */
 .header1{
     height: 90px;
-    background-color: rgba(245, 214, 35, 0.993);
+    background-color: rgba(246, 222, 10, 0.993);
     
 }
 .header{
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(4, 9, 30, 0.425),rgba(4, 9, 30, 0.507)),url(image/books2.webp);
+    background-image: linear-gradient(rgba(23, 4, 30, 0.425),rgba(4, 9, 30, 0.507)),url(image/books2.webp);
     background-position: center;
     background-size: cover;
     position: relative;
@@ -41,6 +45,7 @@ nav img{
     position: relative;
     color: white;
 }
+
 .nav-links ul li a{
     color: rgb(252, 250, 250);
     text-decoration: none;
@@ -524,6 +529,7 @@ padding-left: 10px;
 .about-col p{
     padding: 15px 0 25px;
     padding-left: 10px;
+    text-align: justify;
 }
 .red-btn{
     border: 1px solid #f44336;

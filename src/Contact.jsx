@@ -1,15 +1,14 @@
 import React from 'react'
-import { useState,useEffect} from 'react';
+import { useState} from 'react';
 import { app } from './firebase'
 import { getFirestore, addDoc, collection, serverTimestamp,} from "firebase/firestore";
-import { onAuthStateChanged, getAuth,}  from "firebase/auth";
 import { First } from "./First";
 
-const auth=getAuth(app)
 
 
 const db=getFirestore(app);
-function Contact() {
+function Contact(user1) {
+    const user=user1.user
 const[suggestion,setsuggestion]=useState({
     Name:"",
     email:"",
@@ -58,15 +57,7 @@ else{
     alert("please fill the data")
 }
 }
-const [user ,setuser] =useState(false);
-useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (data) => {
-      setuser(data);
-    },[]);  
-    return () => {
-        unsubscribe();
-      }; 
-    });
+
   return (
     <div>{user?( <>
         <section className="location">
